@@ -45,10 +45,23 @@ public class VoterService {
                 .saveAll(voters);
     }
 
+    public Voter getVoter(String regNo) {
+        return repoManager
+                .getVoterRepo()
+                .findById(regNo)
+                .orElse(null);
+    }
+
 
     private boolean voterNotRegistered(Voter voter) {
         return !repoManager
                 .getVoterRepo()
                 .existsByRegNo(voter.getRegNo());
+    }
+
+    public List<Voter> getVoters() {
+        return repoManager
+                .getVoterRepo()
+                .findAll();
     }
 }

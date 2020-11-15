@@ -1,5 +1,6 @@
 package com.eucossa.egerton.voting.services.position;
 
+import com.eucossa.egerton.voting.model.candidate.Candidate;
 import com.eucossa.egerton.voting.model.position.Position;
 import com.eucossa.egerton.voting.repository.RepoManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class PositionService {
     private RepoManager repoManager;
 
 
+
     @Autowired
     public void setRepoManager(RepoManager repoManager) {
         this.repoManager = repoManager;
@@ -34,7 +36,11 @@ public class PositionService {
         return null;
     }
 
-
+    public List<Position> getPositions() {
+        return repoManager
+                .getPositionRepo()
+                .findAll();
+    }
 
     public List<Position> savePositions(List<Position> positions) {
         positions = positions
@@ -52,5 +58,12 @@ public class PositionService {
         return !repoManager
                 .getPositionRepo()
                 .existsByName(position.getName());
+    }
+
+    public Position getPosition(int id) {
+        return repoManager
+                .getPositionRepo()
+                .findById(id)
+                .orElse(null);
     }
 }

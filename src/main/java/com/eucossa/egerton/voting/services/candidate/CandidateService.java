@@ -32,6 +32,13 @@ public class CandidateService {
     }
 
 
+    public List<Candidate> getCandidates() {
+        return repoManager
+                .getCandidateRepo()
+                .findAll();
+    }
+
+
     public List<Candidate> saveCandidates(List<Candidate> candidates) {
         candidates = candidates
                 .stream()
@@ -47,5 +54,12 @@ public class CandidateService {
         return !repoManager
                 .getCandidateRepo()
                 .existsByVoter(candidate.getVoter());
+    }
+
+    public Candidate getCandidate(int id) {
+        return repoManager
+                .getCandidateRepo()
+                .findById(id)
+                .orElse(null);
     }
 }
