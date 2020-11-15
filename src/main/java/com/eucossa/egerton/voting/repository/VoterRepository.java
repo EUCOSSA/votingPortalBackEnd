@@ -10,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface VoterRepository extends JpaRepository<Voter, String> {
 
     boolean existsByRegNo(String regNo);
+
+    Voter findByRegNo(String regNo);
 }
