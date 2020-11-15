@@ -1,6 +1,7 @@
 package com.eucossa.egerton.voting.model.position;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,9 +14,14 @@ import javax.persistence.Id;
  */
 @Data
 @Entity
+@NoArgsConstructor
 public class Position {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Id
     private int id;
     private String name;
+
+    public Position(String name) {
+        this.name = name;
+    }
 }
