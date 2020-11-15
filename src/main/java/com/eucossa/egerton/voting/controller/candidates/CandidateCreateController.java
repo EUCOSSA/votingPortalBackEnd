@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(path = "/api/v1/add")
+@RequestMapping(path = "/api/v1/candidate/add")
 public class CandidateCreateController {
 
     private ServicesManager servicesManager;
