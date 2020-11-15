@@ -1,13 +1,13 @@
 package com.eucossa.egerton.voting.repository;
 
-import com.eucossa.egerton.voting.model.position.Position;
+import com.eucossa.egerton.voting.model.voter.Voter;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * @author Odinga David
  * otienodavidodinga@gmail.com
  */
-public interface PositionRepo extends JpaRepository<Position, Integer> {
+public interface VoterRepository extends JpaRepository<Voter, String> {
 
-    boolean existsByName(String name);
+    boolean existsByRegNo(String regNo);
 }

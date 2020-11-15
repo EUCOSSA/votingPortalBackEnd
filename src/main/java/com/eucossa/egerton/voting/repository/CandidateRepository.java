@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author Odinga David
  * otienodavidodinga@gmail.com
  */
-public interface CandidateRepo extends JpaRepository<Candidate, Integer> {
+public interface CandidateRepository extends JpaRepository<Candidate, Integer> {
 
     boolean existsByVoter(Voter voter);
 }

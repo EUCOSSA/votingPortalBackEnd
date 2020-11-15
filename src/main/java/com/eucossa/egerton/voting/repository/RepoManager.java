@@ -13,22 +13,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class RepoManager {
 
-    private CandidateRepo candidateRepo;
-    private PositionRepo positionRepo;
-    private VoterRepo voterRepo;
+    private CandidateRepository candidateRepo;
+    private PositionRepository positionRepo;
+    private VoterRepository voterRepo;
 
     @Autowired
-    public void setCandidateRepo(CandidateRepo candidateRepo) {
+    public void setCandidateRepo(CandidateRepository candidateRepo) {
         this.candidateRepo = candidateRepo;
     }
 
     @Autowired
-    public void setPositionRepo(PositionRepo positionRepo) {
+    public void setPositionRepo(PositionRepository positionRepo) {
         this.positionRepo = positionRepo;
     }
 
     @Autowired
-    public void setVoterRepo(VoterRepo voterRepo) {
+    public void setVoterRepo(VoterRepository voterRepo) {
         this.voterRepo = voterRepo;
     }
 }
